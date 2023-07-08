@@ -11,6 +11,12 @@ class ListsController < ApplicationController
   def method_name
   
   end  
+  def destroy
+    list = List.find(params[:id]) 
+    list.destroy
+    redirect_to '/lists'  
+  end
+  
   def index
     @lists = List.all
   end
